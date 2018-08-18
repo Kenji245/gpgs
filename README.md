@@ -2,8 +2,10 @@
 
 Kopfenheim GitHub: `git clone https://github.com/Kopfenheim/godot-gpgs` at 18 August 2018
 
+
 [In English](https://github.com/ClaudioEden/godot-GamePlayGoogleServices#google-play-game-services-android-for-godot-game-engine)
 
+[Em Português](https://github.com/ClaudioEden/godot-GamePlayGoogleServices#modulo-google-play-game-services-para-engine-godot-android)
 
 
 # Google Play Game Services (Android) for Godot Game Engine
