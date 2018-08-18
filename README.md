@@ -1,6 +1,6 @@
 # Forked by
 
-> Kopfenheim/godot-gpgs: `git clone https://github.com/Kopfenheim/godot-gpgs`
+Kopfenheim GitHub: `git clone https://github.com/Kopfenheim/godot-gpgs` at 18 August 2018
 
 
 # Google Play Game Services (Android) for Godot Game Engine
