@@ -1,4 +1,10 @@
+# Forked by
+
+> Kopfenheim/godot-gpgs: `git clone https://github.com/Kopfenheim/godot-gpgs`
+
+
 # Google Play Game Services (Android) for Godot Game Engine
+
 This is a Google Play Game Services module for the Godot Game Engine. This module is meant to be used for games deployed to an Android device. This module allows you to use nearly all the features provided by the Google Play Games Service API for Android including:
 - Log-in with Google
 - Information about the signed in player (including their profile pictures)
