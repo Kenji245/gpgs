@@ -2,6 +2,9 @@
 
 Kopfenheim GitHub: `git clone https://github.com/Kopfenheim/godot-gpgs` at 18 August 2018
 
+[In English](https://github.com/ClaudioEden/godot-GamePlayGoogleServices#google-play-game-services-android-for-godot-game-engine)
+
+
 
 # Google Play Game Services (Android) for Godot Game Engine
 
@@ -70,3 +73,6 @@ This module uses Google Play Services' powerful Tasks API to execute various ope
 
 ## Functions and Callbacks
 See the [Wiki](https://github.com/Kopfenheim/godot-gpgs/wiki) for a description of the various functions that you can call on the `gpgs` object and the various callbacks that you can listen for in your GDScript file
+
+
+# Modulo Google Play Game Services para Engine Godot (Android) 
