@@ -2,6 +2,7 @@
 
 [![Platform](https://img.shields.io/badge/Platform-Android-green.svg?longCache=true&style=flat-square)](https://github.com/xsellier/godotandroid)
 [![Godot Engine](https://img.shields.io/badge/GodotEngine-2.1-orange.svg?longCache=true&style=flat-square)](https://github.com/godotengine/godot)
+[![Godot Engine](https://img.shields.io/badge/GodotEngine-3.x-orange.svg?longCache=true&style=flat-square)](https://github.com/godotengine/godot)
 [![LICENCE](https://img.shields.io/badge/License-MIT-green.svg?longCache=true&style=flat-square)](https://github.com/xsellier/godotandroid/blob/master/LICENSE)
 
 # Forked by
@@ -28,7 +29,7 @@ This module uses Google Play Services' powerful Tasks API to execute various ope
 
 ## Setup
 1. Make sure that you have the Android SDK and NDK setup and are familiar with compiling Godot for Android (See Godot's documentation for more information about this)
-2. Create a "Game Services" game in the Google Play Console and take a note of the App ID 
+2. Create a "Game Services" game in the Google Play Console and take a note of the App ID
 3. Clone or download the repository onto your computer
 4. Copy the "gpgs" folder into the "modules" directory of Godot's source code
 5. Inside "../android/AndroidManifestChunk.xml", replace the `{Your APP_ID here}` so that it looks more like this (note: the APP_ID shown here is just a dummy value)
@@ -48,14 +49,14 @@ This module uses Google Play Services' powerful Tasks API to execute various ope
 
 ## Using the module in your game
 1. Add the following code in your project's engine.cfg file (for Godot versions lower than 3.0) or in the project.godot file (for Godot 3.0 and above)
-	
+
 	```
 	[android]
 
 	modules="org/godotengine/godot/GodotPlayGameServices"
 	```
 2. If you already have such an entry then add a `,` after the existing module path, followed `org/godotengine/godot/GodotPlayGameServices` in the string. It would look something like this:
-	
+
 	```
 	[android]
 
@@ -80,4 +81,4 @@ This module uses Google Play Services' powerful Tasks API to execute various ope
 See the [Wiki](https://github.com/Kopfenheim/godot-gpgs/wiki) for a description of the various functions that you can call on the `gpgs` object and the various callbacks that you can listen for in your GDScript file
 
 
-# Modulo Google Play Game Services para Engine Godot (Android) 
+# Modulo Google Play Game Services para Engine Godot (Android)

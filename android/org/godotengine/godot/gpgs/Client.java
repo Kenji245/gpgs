@@ -132,7 +132,7 @@ public class Client {
         switch (requestCode){
             case RC_SIGN_IN:
                 GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(intent);
-                if (result.isSuccess()) {
+                if (result != null && result.isSuccess()) {
                     GoogleSignInAccount signedInAccount = result.getSignInAccount();
                     onConnected(signedInAccount, SIGN_IN_INTERACTIVE);
 
@@ -140,8 +140,11 @@ public class Client {
                     // Ugh, this thing was annoying to figure out haha.
                     Games.getGamesClient(activity, signedInAccount).setViewForPopups(activity.findViewById(android.R.id.content));
                 } else {
-                    String message = result.getStatus().getStatusMessage();
-                    if (message != null || !message.isEmpty()) {
+                    String message = "signin result is null";
+                    if (result != null) {
+                        message = result.getStatus().getStatusMessage();
+                    }
+                    if (message != null && !message.isEmpty()) {
                         Log.d(TAG, "Connection error. ApiException message: " + message);
                     }
                     onDisconnected();

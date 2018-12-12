@@ -139,10 +139,16 @@ public class GodotPlayGameServices extends Godot.SingletonBase {
 
     @Override
     protected void onMainActivityResult(int request, int response, Intent intent) {
-        client.onMainActivityResult(request, response, intent);
-        savedGames.onMainActivityResult(request, response, intent);
-        realTimeMultiplayer.onMainActivityResult(request, response, intent);
-    }
+        if (client != null) {
+            client.onMainActivityResult(request, response, intent);
+        }
+		if (savedGames != null) {
+			savedGames.onMainActivityResult(request, response, intent);
+		}
+		if (realTimeMultiplayer != null) {
+			realTimeMultiplayer.onMainActivityResult(request, response, intent);
+		}
+	}
 
     //region Connection methods -----------------------------------------------------------------------------
 
