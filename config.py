@@ -6,7 +6,7 @@ def configure(env):
 
         env.android_add_maven_repository("url 'https://maven.google.com'")
 
-        gms_version = "16.0.+"
+        gms_version = "15.0.+"
 
         # Play service dependencies
         env.android_add_dependency("compile 'com.google.android.gms:play-services-auth:" + gms_version + "'")
