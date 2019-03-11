@@ -32,11 +32,12 @@ This module uses Google Play Services' powerful Tasks API to execute various ope
 2. Create a "Game Services" game in the Google Play Console and take a note of the App ID
 3. Clone or download the repository onto your computer
 4. Copy the "gpgs" folder into the "modules" directory of Godot's source code
-5. Inside "../android/AndroidManifestChunk.xml", replace the `{Your APP_ID here}` so that it looks more like this (note: the APP_ID shown here is just a dummy value)
+5. Inside "../android/AndroidManifestChunk.xml", replace the `{Your APP_ID here}` so that it looks more like this (note: the APP_ID shown here is just a dummy value) (note2: the last tag fixes a crash with Android 9)
 
 	```xml
 	<meta-data android:name="com.google.android.gms.games.APP_ID" android:value="\ 1234567890123" />
 	<meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+	<uses-library android:name="org.apache.http.legacy" android:required="false"/>
 	```
 
 6. If any of your other modules also use the second line of the AndroidManifestChunk.xml shown above, then delete one of them because it could cause errors down the line.
