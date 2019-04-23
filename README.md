@@ -43,10 +43,19 @@ This module uses Google Play Services' powerful Tasks API to execute various ope
 	```
 
 6. If any of your other modules also use the second line of the AndroidManifestChunk.xml shown above, then delete one of them because it could cause errors down the line.
-7. Recompile the Godot source for android
-8. Compile the resultant Android project using `gradlew build`.
-9. Open the godot engine and link the created .apk files as Custom Packages in the Export menu
-10. Enable the following permissions in the Export menu
+7. If you are trying to use the same admob modules that I mentoined you need to remove this line from `/platform/android/java/build.gradle`
+	```
+	dependencies {
+		// implementation "com.android.support:support-core-utils:28.0.0"
+		compile ('com.google.android.gms:play-services-ads:16.0.0') { exclude group: 'com.android.support' }
+		compile 'com.google.android.gms:play-services-auth:16.0.0'
+		compile 'com.google.android.gms:play-services-games:16.0.0'
+	}
+	```
+8. Recompile the Godot source for android
+9. Compile the resultant Android project using `gradlew build`.
+10. Open the godot engine and link the created .apk files as Custom Packages in the Export menu
+11. Enable the following permissions in the Export menu
 	- Access Network State
 	- Internet
 
