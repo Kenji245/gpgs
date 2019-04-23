@@ -7,7 +7,7 @@
 
 # Forked by
 
-Kopfenheim GitHub: `git clone https://github.com/Kopfenheim/godot-gpgs` at 18 August 2018
+Kopfenheim GitHub: `git clone https://github.com/Kopfenheim/godot-gpgs` at 4 May 2019
 
 See in [English](https://github.com/ClaudioEden/godot-GamePlayGoogleServices#google-play-game-services-android-for-godot-game-engine) :us:   /   Leia em [Português](https://github.com/ClaudioEden/godot-GamePlayGoogleServices#modulo-google-play-game-services-para-engine-godot-android) <span>&#x1f1e7;&#x1f1f7;</span>
 
@@ -25,17 +25,19 @@ This is a Google Play Game Services module for the Godot Game Engine. This modul
 
 This module uses Google Play Services' powerful Tasks API to execute various operations asynchronously. To handle the results from these asynchronous operations, a lot of relevant callback functions are also provided and can be used in GDScript.
 
-**NOTE:** This module is compatible with Godot 3.0 but has not been tested with the Mono version. So, using this module for developing Godot games using C# could lead to unforeseen errors.
+**NOTE:** This module is compatible with Godot 3.1 but has not been tested with the Mono version. So, using this module for developing Godot games using C# could lead to unforeseen errors.
+
+**NOTE"** This is compatible with Admob from https://github.com/kloder-games/godot-admob and does work for both.
 
 ## Setup
 1. Make sure that you have the Android SDK and NDK setup and are familiar with compiling Godot for Android (See Godot's documentation for more information about this)
 2. Create a "Game Services" game in the Google Play Console and take a note of the App ID
 3. Clone or download the repository onto your computer
 4. Copy the "gpgs" folder into the "modules" directory of Godot's source code
-5. Inside "../android/AndroidManifestChunk.xml", replace the `{Your APP_ID here}` so that it looks more like this (note: the APP_ID shown here is just a dummy value) (note2: the last tag fixes a crash with Android 9)
+5. Inside "../android/AndroidManifestChunk.xml", replace the `{Your APP_ID here}`, dont remove `\u003` so that it looks more like this (note: the APP_ID shown here is just a dummy value) (note2: the last tag fixes a crash with Android 9)
 
 	```xml
-	<meta-data android:name="com.google.android.gms.games.APP_ID" android:value="\ 1234567890123" />
+	<meta-data android:name="com.google.android.gms.games.APP_ID" android:value="\u0031234567890123" />
 	<meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
 	<uses-library android:name="org.apache.http.legacy" android:required="false"/>
 	```
@@ -56,6 +58,12 @@ This module uses Google Play Services' powerful Tasks API to execute various ope
 
 	modules="org/godotengine/godot/GodotPlayGameServices"
 	```
+	**NOTE** if you are using admob it would look like this ;
+	```
+	[android]
+
+	modules="org/godotengine/godot/GodotPlayGameServices,org/godotengine/godot/GodotAdMob"
+	```
 2. If you already have such an entry then add a `,` after the existing module path, followed `org/godotengine/godot/GodotPlayGameServices` in the string. It would look something like this:
 
 	```
@@ -64,11 +72,12 @@ This module uses Google Play Services' powerful Tasks API to execute various ope
 	modules="{existing_module},org/godotengine/godot/GodotPlayGameServices"
 	```
 3. To use the module in GDScript:
-	- Godot 3.0 or above
+	- Godot 3.0 or above (3.1 is compatible)
 		```python
-		if Engine.has_singleton("GodotPlayGameServices"):
-			gpgs = Engine.get_singleton("GodotPlayGameServices")
-			gpgs.init(get_instance_id(), true)
+		if OS.get_name() == "Android":
+			if Engine.has_singleton("GodotPlayGameServices"):
+				gpgs = Engine.get_singleton("GodotPlayGameServices")
+				gpgs.init(get_instance_id(), true)
 		```
 	- Godot versions lower than 3.0
 		```python
