@@ -43,7 +43,7 @@ This module uses Google Play Services' powerful Tasks API to execute various ope
 	```
 
 6. If any of your other modules also use the second line of the AndroidManifestChunk.xml shown above, then delete one of them because it could cause errors down the line.
-7. If you are trying to use the same admob modules that I mentoined you need to remove this line from `/platform/android/java/build.gradle`
+7. If you are trying to use the same admob modules that I mentoined you need to remove `// implementation "com.android.support:support-core-utils:28.0.0"` this line from `/platform/android/java/build.gradle`
 	```
 	dependencies {
 		// implementation "com.android.support:support-core-utils:28.0.0"
