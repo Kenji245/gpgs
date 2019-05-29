@@ -46,10 +46,10 @@ This module uses Google Play Services' powerful Tasks API to execute various ope
 7. If you are trying to use the same admob modules that I mentoined you need to remove `// implementation "com.android.support:support-core-utils:28.0.0"` this line from `/platform/android/java/build.gradle`
 	```
 	dependencies {
-		// implementation "com.android.support:support-core-utils:28.0.0"
-		compile ('com.google.android.gms:play-services-ads:16.0.0') { exclude group: 'com.android.support' }
-		compile 'com.google.android.gms:play-services-auth:16.0.0'
-		compile 'com.google.android.gms:play-services-games:16.0.0'
+		//implementation "com.android.support:support-core-utils:28.0.0"
+		compile ('com.google.android.gms:play-services-ads:17.2.0') { exclude group: 'com.android.support' }
+		compile 'com.google.android.gms:play-services-auth:16.0.1'
+		compile 'com.google.android.gms:play-services-games:17.0.0'
 	}
 	```
 8. Recompile the Godot source for android
